@@ -1,7 +1,11 @@
-# re2-wasm [![NPM version][npm-img]][npm-url]
+# @sharevb/re2-wasm [![NPM version][npm-img]][npm-url]
 
-[npm-img]: https://img.shields.io/npm/v/re2-wasm.svg
-[npm-url]: https://npmjs.org/package/re2-wasm
+[npm-img]: https://img.shields.io/npm/v/re2-wasm-embedded.svg
+[npm-url]: https://npmjs.org/package/re2-wasm-embedded
+
+**This version embed the WASM in generated JS to simplify deployment**
+
+## Original `re2-wasm` readme
 
 **This is not an officially supported Google product.**
 
@@ -119,7 +123,7 @@ The `RE2` engine only works in Unicode mode, so the `RE2` class must always be c
 Installation:
 
 ```
-npm install --save re2-wasm
+npm install --save re2-wasm-embedded
 ```
 
 ## How to use
@@ -127,7 +131,7 @@ npm install --save re2-wasm
 It is used just like a `RegExp` object.
 
 ```js
-var { RE2 } = require("re2-wasm");
+var { RE2 } = require("@sharevb/re2-wasm");
 
 // with default flags
 var re = new RE2("a(b*)", 'u');
@@ -225,7 +229,7 @@ matched groups, like so: `\1`, `\2`, and so on. Example of backrefrences:
 Here is an example of a case where they may not:
 
 ```js
-var { RE2 }  = require("re2-wasm");
+var { RE2 }  = require("@sharevb/re2-wasm");
 
 var pattern = '(?:(a)|(b)|(c))+';
 
